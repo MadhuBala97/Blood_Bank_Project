@@ -1,0 +1,56 @@
+{% load static %}
+{% include 'template/adminmenu.html' %}
+<div class="page-banner overlay-dark bg-image"style="background-image: url({% static 'assets/img/grp.png' %});"></div>
+
+    <div class="banner-section">
+      <div class="container text-center wow fadeInUp">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="/admin1/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Show All Register User</li>
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">SHOW ALL USERS</h1>
+      </div> <!-- .container -->
+    </div> <!-- .banner-section -->
+  </div> <!-- .page-banner -->
+
+  <div class="page-section bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+             <table class="table table-striped table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Email-Id</th>
+                <th>Password</th>
+                <th>Address</th>
+                <th>Action</th>
+                <th>Edit</th>
+              </tr>
+              {% for single in alldata %}
+                <tr>
+                    <th>{{single.name}}</th>
+                    <th>{{single.age}}</th>
+                    <th>{{single.gender}}</th>
+                    <th>{{single.email}}</th>
+                    <th>{{single.password}}</th>
+                    <!-- <th>{{single.confirm}}</th> -->
+                    <th>{{single.address}}</th>
+                    <th><a href="{% url 'delete_user' pk=single.p_id %}"><img src="{%static 'assets/img/delete.png' %}" height=20 width=20/</a></th>
+                    <th><a href="{% url 'updateuser' pk=single.p_id %}"><img src="{%static 'assets/img/edit.png' %}" height=20 width=20/</a></th> 
+                  </tr>
+
+          {% endfor %}
+        </table>
+
+
+        </div>
+      </div>
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+
+
+  {% include 'template/footer.html' %}

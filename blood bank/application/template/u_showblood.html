@@ -1,0 +1,106 @@
+{% load static %}
+{% include 'template/usermenu.html' %}
+  <div class="page-section pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb bg-transparent py-0 mb-5">
+              <li class="breadcrumb-item"><a href="/user/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">List of All Blood Units</li>
+            </ol>
+          </nav>
+        </div>
+      </div> <!-- .row -->
+
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row">
+            {% for single in alldata %}
+
+         
+          
+              <div class="col-lg-6"> <article class="blog-details">
+            <div class="post-thumb">
+              <img src="{% static 'assets/my/1.jpg'%}" alt="">
+            </div>
+            
+            <h2 class="post-title h1" style="text-transform: capitalize;">{{ single.btype}} ({{ single.state}})</h2>
+            <div class="post-content">
+              <p>{{ single.address}}</p>
+            </div>
+            <div class="post-tags">
+              <a href="#" class="tag-link">{{ single.bankname}}</a>
+              <a href="#" class="tag-link">No of Units :- {{ single.nounit}}</a>
+              <a href="#" class="tag-link">Rs.{{ single.price}} /-</a>
+            </div>
+              </article> <!-- .blog-details -->
+          <div class="comment-form-wrap pt-5">
+              <form action="/bloodrequest/" method="post">
+                {% csrf_token %}
+              <div class="form-row form-group">
+                <div class="col-md-12">
+                  <label for="email">No of Unit *</label>
+                  <input type="number" class="form-control" id="email" max="{{ single.nounit}}" name="t1" required="required">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="hidden" class="form-control" id="website" value="{{usernames}}" name="t2"> 
+                <input type="hidden" class="form-control" id="website" value="{{single.p_id}}" name="t3">
+                <input type="hidden" class="form-control" id="website" value="{{single.bankname}}" name="t4">
+                <input type="hidden" class="form-control" id="website" value="{{single.price}}" name="t5">
+                <input type="hidden" class="form-control" id="website" value="{{single.state}}" name="t6">
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Required" class="btn btn-primary">
+              </div>
+            </form>
+          </div>
+        </div>
+          {% endfor %}
+            </div>
+
+
+          
+        </div>
+        <div class="col-lg-4">
+          <div class="sidebar">
+            
+            <div class="sidebar-block">
+              <h3 class="sidebar-title">Categories of Blood</h3>
+              <ul class="categories">
+                <li><a href="#">+A</a> <span>12</span></a></li>
+                <li><a href="#">-A <span>22</span></a></li>
+                <li><a href="#">O <span>37</span></a></li>
+                <li><a href="#">-O <span>42</span></a></li>
+                <li><a href="#">B+</a> <span>14</span></a></li>
+                <li><a href="#">B-</a> <span>14</span></a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-block">
+              <h3 class="sidebar-title">Recent Blog</h3>
+              <div class="blog-item">
+                <a class="post-thumb" href="">
+                  <img src="{% static 'assets/img/blog/blog_1.jpg' %}" alt="">
+                </a>
+                <div class="content">
+                  <h5 class="post-title"><a href="#">Even the all-powerful Pointing has no control</a></h5>
+                  <div class="meta">
+                    <a href="#"><span class="mai-calendar"></span> July 12, 2018</a>
+                    <a href="#"><span class="mai-person"></span> Admin</a>
+                    <a href="#"><span class="mai-chatbubbles"></span> 19</a>
+                  </div>
+                </div>
+              </div>
+              
+              
+            </div>
+
+
+          </div>
+        </div> 
+      </div> <!-- .row -->
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+{% include 'template/userfooter.html' %}

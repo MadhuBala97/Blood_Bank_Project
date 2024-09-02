@@ -1,0 +1,97 @@
+{% load static %}
+{% include 'template/topmenu.html' %}
+  
+    <div class="banner-section">
+      <div class="container text-center wow fadeInUp">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="/home/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Login</li>
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">Login</h1>
+      </div> <!-- .container -->
+    </div> <!-- .banner-section -->
+  </div> <!-- .page-banner -->
+
+  <div class="page-section">
+    <div class="container">
+      <h1 class="text-center wow fadeInUp">LOGIN/REGISTER</h1>
+
+      
+        <div class="row mb-3">
+          <div class="col-sm-6 py-2 wow fadeInLeft">
+            <form class="contact-form mt-5" action="/logincode/" method="post">
+              {% csrf_token %}
+            <div class="col-sm-12 py-2 wow fadeInLeft">
+              <label for="fullName">EMAIL-ID</label>
+              <input type="email" id="fullName" class="form-control" placeholder="Email-Id" required="required" name="t1">
+              </div>
+              <div class="col-sm-12 py-2 wow fadeInLeft">
+              <label for="fullName">PASSWORD</label>
+              <input type="password" id="fullName" class="form-control" placeholder="Password" required="required" name="t2">
+              <div class="col-sm-12 py-2 wow fadeInLeft">
+              <button class="btn btn-primary wow zoomIn" type="submit">Login</button>
+            </div>
+          </div>
+        </form>
+        </div>
+          <div class="col-sm-6 py-2 wow fadeInRight">
+            <form class="contact-form mt-5" action="/registercode/" method="post">
+              {% csrf_token %}
+            <div class="col-sm-12 py-2 wow fadeInLeft">
+              <label for="fullName">Name</label>
+              <input type="text" id="fullName" class="form-control" placeholder="Name" required="required" name="t1">
+              </div>
+            <div class="col-sm-12 py-2 wow fadeInLeft">
+              <label for="fullName">Age</label>
+              <input type="text" id="fullName" class="form-control" placeholder="Age" required="required" name="t2">
+              </div>
+            <div class="col-sm-12 py-2 wow fadeInLeft">
+              <label for="fullName">Gender</label><br/>
+              Male<input type="radio" value="Male" name="t3" />&nbsp;&nbsp;&nbsp;&nbsp;
+              FeMale<input type="radio" value="FeMale" name="t3" />
+              </div>
+            <div class="col-sm-12 py-2 wow fadeInLeft">
+              <label for="fullName">Email-Id</label>
+              <input type="email" id="fullName" class="form-control" placeholder="Email-Id" required="required" name="t4">
+              </div>
+            <div class="col-sm-12 py-2 wow fadeInLeft">
+              <label for="fullName">Password</label>
+              <input type="password" id="fullName" class="form-control" placeholder="Password" required="required" name="t5">
+              </div>
+              <div class="col-sm-12 py-2 wow fadeInLeft">
+              <label for="fullName">Address</label>
+              <textarea id="fullName" class="form-control" name="t6"></textarea>
+              <div class="col-sm-12 py-2 wow fadeInLeft">
+              <button class="btn btn-primary wow zoomIn" type="submit">Create Account</button>
+            </div>
+          </div>
+        </form>
+          </div>
+          
+    </div>
+  </div>
+
+  <div class="maps-container wow fadeInUp">
+    <div id="google-maps"></div>
+  </div>
+
+
+    <div class="container py-5 py-lg-0">
+      <div class="row align-items-center">
+        <div class="col-lg-4 wow zoomIn">
+          <div class="img-banner d-none d-lg-block">
+            <img src="{% static 'assets/img/mobile_app.png' %}" alt="">
+          </div>
+        </div>
+        <div class="col-lg-8 wow fadeInRight">
+          <h1 class="font-weight-normal mb-3">Get easy access of all features using One Health Application</h1>
+          <a href="#"><img src="{% static 'assets/img/google_play.svg' %}" alt=""></a>
+          <a href="#" class="ml-2"><img src="{% static 'assets/img/app_store.svg' %}" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .banner-home -->
+
+ {% include 'template/footer.html' %}

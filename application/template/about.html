@@ -1,0 +1,131 @@
+{% load static %}
+{% include 'template/topmenu.html' %}
+  <div class="page-banner overlay-dark bg-image" style="background-image: url({% static 'assets/img/ry.jpg' %});">
+    <div class="banner-section">
+      <div class="container text-center wow fadeInUp">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">About</li>
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">About Us</h1>
+      </div> <!-- .container -->
+    </div> <!-- .banner-section -->
+  </div> <!-- .page-banner -->
+
+  <div class="page-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+            <div class="circle-shape bg-secondary text-white">
+              <span class="mai-chatbubbles-outline"></span>
+            </div>
+            <p><span>Chat</span> with a doctors</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+            <div class="circle-shape bg-primary text-white">
+              <span class="mai-shield-checkmark"></span>
+            </div>
+            <p><span>One</span>-Health Protection</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+            <div class="circle-shape bg-accent text-white">
+              <span class="mai-basket"></span>
+            </div>
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 wow fadeInUp">
+          <h5 class="text-center mb-3">Who we Are</h5>
+          <h1 class="text-center mb-3">Ways To Help</h1>
+          <div class="text-lg">
+            <p>Blood Center is public donation center with blood donation members in the changing health care system. Founded in 1978, Blood Center is one of the nation’s oldest and largest nonprofit transfusion medicine organizations. We provide a blood and volunteer services across the US. With our national footprint, deep community roots and specialized services, we are the thread that connects people and resources together to fuel progress in transfusion medicine.</p>
+            <p>Blood Group,Blood Bank,Stock.it Manages all the information about Blood, Blood Cell, Stock,Blood. The Project is to Tally built at adminstrative end and thus only the administrator is guaranteed the access. The Purpose of the Project is to Build An application program to reduce the manual work for managing the blood,donor Blood Cell,Blood Group.It Tracks all the details about the Blood group,Blood Bank stock</p>
+          </div>
+        </div>
+        <div class="col-lg-10 mt-5">
+          <h1 class="text-center mb-5 wow fadeInUp">More ways you can support us</h1>
+          <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 wow zoomIn">
+              <div class="card-doctor">
+                <div class="header">
+                  <img src="{% static 'assets/img/va.jpg' %}" alt="">
+                  <div class="meta">
+                    <a href="#"><span class="mai-call"></span></a>
+                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                  </div>
+                </div>
+                <div class="body">
+                  <p class="text-xl mb-0">Donate Funds</p>
+                  <span class="text-sm text-grey">Your financial gift can help a thousand children who struggle from illnesses. Your gift can provide the necessary medicine, treatment, and other essentials.</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow zoomIn">
+              <div class="card-doctor">
+                <div class="header">
+                  <img src="{% static 'assets/img/ga.jpg' %}" alt="">
+                  <div class="meta">
+                    <a href="#"><span class="mai-call"></span></a>
+                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                  </div>
+                </div>
+                <div class="body">
+                  <p class="text-xl mb-0">Become a Volunteer</p>
+                  <span class="text-sm text-grey">Volunteers are playing a vital role in helping our center save lives. We are always looking for your help. Join our team today</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow zoomIn">
+              <div class="card-doctor">
+                <div class="header">
+                  <img src="{% static 'assets/img/10.jpg' %}" alt="">
+                  <div class="meta">
+                    <a href="#"><span class="mai-call"></span></a>
+                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                  </div>
+                </div>
+                <div class="body">
+                  <p class="text-xl mb-0"> Host a Blood Drive</p>
+                  <span class="text-sm text-grey">Inspiring others to give blood by hosting a blood drive is a rewarding way to benefit your community.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-section banner-home bg-image" style="background-image: url(../assets/img/banner-pattern.svg);">
+    <div class="container py-5 py-lg-0">
+      <div class="row align-items-center">
+        <div class="col-lg-4 wow zoomIn">
+          <div class="img-banner d-none d-lg-block">
+            <img src="{% static 'assets/img/mobile_app.png' %}" alt="">
+          </div>
+        </div>
+        <div class="col-lg-8 wow fadeInRight">
+          <h1 class="font-weight-normal mb-3">Get easy access of all features using One blood donation application</h1>
+          <a href="#"><img src="../assets/img/google_play.svg" alt=""></a>
+          <a href="#" class="ml-2"><img src="{% static 'assets/img/app_store.svg' %}" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .banner-home -->
+
+  {% include 'template/footer.html' %}

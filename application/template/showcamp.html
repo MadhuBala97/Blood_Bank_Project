@@ -1,0 +1,53 @@
+{% load static %}
+{% include 'template/adminmenu.html' %}
+
+  <div class="page-banner overlay-dark bg-image" style="background-image: url({% static 'assets/img/bg_image_1.jpg'%});">
+    <div class="banner-section">
+      <div class="container text-center wow fadeInUp">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="/admin1/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Show Camp's</li>
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">SHOW ALL CAMP'S</h1>
+      </div> <!-- .container -->
+    </div> <!-- .banner-section -->
+  </div> <!-- .page-banner -->
+
+  <div class="page-section bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <div class="row">
+             {% for single in alldata %}
+            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+              <div class="card-doctor">
+                <div class="header">
+                  <img src="{% static 'assets/my/camp.jpg' %}" alt="">
+                  <div class="meta">
+                    <a href="{% url 'deletecamp' pk=single.p_id %}"><img src="{% static 'assets/my/del.png'%} " style="border-radius: 50%" /></a>
+                  </div>
+                </div>
+                <div class="body">
+                  <p class="text-xl mb-0" style="text-transform: uppercase;text-align: center;">{{single.cname}}</p>
+                  <span class="text-sm text-black" style="font-weight: bold;text-transform: uppercase;">Location:- {{single.address}}</span><br/>
+                  <span class="text-sm text-black"style="font-weight: bold;text-transform: uppercase;">Date :- {{single.date}}</span>
+                  <br/>
+                  <span class="text-sm text-black"style="font-weight: bold;text-transform: uppercase;">Days :- {{single.noday}}</span>
+                </div>
+              </div>
+            </div>
+             {% endfor %}
+           
+
+          </div>
+
+        </div>
+      </div>
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+
+
+  {% include 'template/footer.html' %}

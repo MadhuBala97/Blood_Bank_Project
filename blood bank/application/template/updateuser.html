@@ -1,0 +1,18 @@
+{% for single in alldata %}
+<form action="/savedata/" method="post">
+    {% csrf_token %}
+    Name <input type="text" name="t1" value="{{single.name}}"><br><br>
+    Age <input type="text" name="t2" value="{{single.age}}"><br><br>
+    Gender <input type="text" name="t3" value="{{single.gender}}"><br><br>
+    E-mail <input type="email" name="t4" value="{{single.email}}"><br><br>
+    Password<input type="text" name="t5" value="{{single.password}}"><br><br>
+    Address<input type="text" name="t6" value="{{single.address}}"><br><br>
+    <input type="hidden" name="t7" value="{{single.p_id}}"><br><br>
+
+
+    <button type="submit">Update data</button>
+    </form>
+
+    {% endfor %}
+
+    

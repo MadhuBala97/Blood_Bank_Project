@@ -1,0 +1,38 @@
+{% load static %}
+{% include 'template/usermenu.html' %}
+{% for single in alldata %}
+  <div class="page-banner overlay-dark bg-image" style="background-image: url(../assets/img/bg_image_1.jpg);">
+    <div class="banner-section">
+      <div class="container text-center wow fadeInUp">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="/user/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Change Password</li>
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">CHANGE PASSWORD</h1>
+      </div> <!-- .container -->
+    </div> <!-- .banner-section -->
+  </div> <!-- .page-banner -->
+
+  <div class="page-section">
+    <div class="container">
+<form action="/mypassword/" method="post">
+        {% csrf_token %}
+        <div class="row mb-3">
+          <div class="col-12 py-2 wow fadeInUp">
+            <label for="subject">OLD PASSWORD</label>
+            <input type="text" id="subject" class="form-control"name="t1" required="required" value="{{ single.password}}" disabled="disabled">
+          </div>
+          <div class="col-12 py-2 wow fadeInUp">
+            <label for="subject">NEW PASSWORD</label>
+            <input type="password" id="subject" class="form-control" name="t2" required="required">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary wow zoomIn">Change Password</button>
+      </form>
+    </div>
+  </div>
+
+{% endfor %}
+ {% include 'template/footer.html' %}}
